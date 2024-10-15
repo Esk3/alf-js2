@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="/style.css" rel="stylesheet">
+  <script src="oppgave2.js" type="module"> </script>
+</head>
+
+<body>
+  <h2>Oppgave 2</h2>
+
+  <main>
+    <form>
+      <input type="number" name="temperatur" placeholder="Temperatur i Fahrenheit">
+      <label for="fra">Fra målenehet</label>
+      <select id="fra" name="fra">
+        <option value="f">Fahrenheit</option>
+        <option value="c">Celsius</option>
+        <option value="k">Kelvin</option>
+      </select>
+
+      <label for="til">Til</label>
+      <select id="til" name="til">
+        <option value="f">Fahrenheit</option>
+        <option value="c">Celsius</option>
+        <option value="k">Kelvin</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+    <p><span id="fahrenheit"></span> grader Fahrenheit tilsvarer <span id="celsius"></span> grader Celsius og <span
+        id="kelvin"></span> grader Kelvin</p>
+  </main>
+
+</body>
+
+</html>
