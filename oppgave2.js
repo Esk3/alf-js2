@@ -1,10 +1,8 @@
 const svar = document.querySelector("#svar");
-const fahrenheitId = "fahrenheit";
-const farenheitHTML = `<span id="${fahrenheitId}"></span>`;
-const celsiusId = "celsius";
-const celsiusHTML = `<span id="${celsiusId}"></span>`;
-const kelvinId = "kelvin";
-const kelvinHTML = `<span id="${kelvinId}"></span>`;
+
+function skriv(fraVerdi, fraEnhet, tilverdi1, tilEnhet1, tilverdi2, tilEnhet2) {
+  svar.textContent = `${fraVerdi.toFixed(2)} grader ${fraEnhet} tilsvarer ${tilverdi1.toFixed(2)} grader ${tilEnhet1}, og ${tilverdi2.toFixed(2)} grader ${tilEnhet2}`;
+}
 
 document.querySelector("form").addEventListener("submit", e => {
   e.preventDefault();
@@ -15,24 +13,23 @@ document.querySelector("form").addEventListener("submit", e => {
 
 
   if (fraEnhet == "f") {
-    svar.innerHTML = `${farenheitHTML} grader Fahrenheit tilsvarer ${celsiusHTML} grader Celsius og ${kelvinHTML} grader Kelvin`
-  } else if (fraEnhet == "c") {
-    svar.innerHTML = `${celsiusHTML} grader Celsius tilsvarer ${farenheitHTML} grader Fahrenheit og ${kelvinHTML} grader Kelvin`
+    skriv(verdi, "Fahrenheit",
+      fraKelvin(verdiKelvin, "c"), "Celsius",
+      fraKelvin(verdiKelvin, "k"), "Kelvin"
+    )
+  }
+  else if (fraEnhet == "c") {
+    skriv(verdi, "Celsius",
+      fraKelvin(verdiKelvin, "f"), "Fahrenheit",
+      fraKelvin(verdiKelvin, "k"), "Kelvin",
+    )
   }
   else if (fraEnhet == "k") {
-    svar.innerHTML = `${kelvinHTML} grader Kelvin tilsvarer ${celsiusHTML} grader Celsius og ${farenheitHTML} grader Fahrenheit`
+    skriv(verdi, "Kelvin",
+      fraKelvin(verdiKelvin, "c"), "Celsius",
+      fraKelvin(verdiKelvin, "f"), "Fahrenheit",
+    )
   }
-  else {
-    svar.innerHTML = "error"
-  }
-
-  const farenheitSpan = svar.querySelector("#" + fahrenheitId);
-  const celsiusSpan = svar.querySelector("#" + celsiusId);
-  const kelvinSpan = svar.querySelector("#" + kelvinId);
-
-  farenheitSpan.textContent = fraKelvin(verdiKelvin, "f");
-  celsiusSpan.textContent = fraKelvin(verdiKelvin, "c");
-  kelvinSpan.textContent = fraKelvin(verdiKelvin, "k");
 });
 
 function tilKelvin(v, type) {
