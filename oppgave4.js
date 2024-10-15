@@ -4,8 +4,8 @@ const bmiSpan = document.querySelector("#bmi");
 
 document.querySelector("form").addEventListener("submit", e => {
   e.preventDefault();
-  const vekt = parseInt(e.target.vekt.value);
-  const hoyde = parseInt(e.target.hoyde.value);
+  const vekt = Number(e.target.vekt.value);
+  const hoyde = Number(e.target.hoyde.value);
 
   const bmi = vekt / ((hoyde * hoyde));
 

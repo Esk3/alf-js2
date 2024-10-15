@@ -9,7 +9,7 @@ const kvadratSpan = document.querySelector("#kvadrat");
 
 form.addEventListener("submit", e => {
   e.preventDefault();
-  const tallet = parseInt(e.target.tall.value);
+  const tallet = Number(e.target.tall.value);
 
   talletSpan.textContent = tallet;
 

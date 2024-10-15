@@ -1,19 +1,38 @@
-const farenheitSpan = document.querySelector("#fahrenheit");
-const celsiusSpan = document.querySelector("#celsius");
-const kelvinSpan = document.querySelector("#kelvin");
+const svar = document.querySelector("#svar");
+const fahrenheitId = "fahrenheit";
+const farenheitHTML = `<span id="${fahrenheitId}"></span>`;
+const celsiusId = "celsius";
+const celsiusHTML = `<span id="${celsiusId}"></span>`;
+const kelvinId = "kelvin";
+const kelvinHTML = `<span id="${kelvinId}"></span>`;
 
 document.querySelector("form").addEventListener("submit", e => {
   e.preventDefault();
-  const verdi = parseInt(e.target.temperatur.value);
+  const verdi = Number(e.target.temperatur.value);
   const fraEnhet = e.target.fra.value;
-  const tilEnhet = e.target.til.value;
 
   const verdiKelvin = tilKelvin(verdi, fraEnhet);
 
-  const verdiITilEnhet = fraKelvin(verdiKelvin, tilEnhet);
 
-  console.log(verdi, fraEnhet, verdiKelvin, tilEnhet, verdiITilEnhet)
+  if (fraEnhet == "f") {
+    svar.innerHTML = `${farenheitHTML} grader Fahrenheit tilsvarer ${celsiusHTML} grader Celsius og ${kelvinHTML} grader Kelvin`
+  } else if (fraEnhet == "c") {
+    svar.innerHTML = `${celsiusHTML} grader Celsius tilsvarer ${farenheitHTML} grader Fahrenheit og ${kelvinHTML} grader Kelvin`
+  }
+  else if (fraEnhet == "k") {
+    svar.innerHTML = `${kelvinHTML} grader Kelvin tilsvarer ${celsiusHTML} grader Celsius og ${farenheitHTML} grader Fahrenheit`
+  }
+  else {
+    svar.innerHTML = "error"
+  }
 
+  const farenheitSpan = svar.querySelector("#" + fahrenheitId);
+  const celsiusSpan = svar.querySelector("#" + celsiusId);
+  const kelvinSpan = svar.querySelector("#" + kelvinId);
+
+  farenheitSpan.textContent = fraKelvin(verdiKelvin, "f");
+  celsiusSpan.textContent = fraKelvin(verdiKelvin, "c");
+  kelvinSpan.textContent = fraKelvin(verdiKelvin, "k");
 });
 
 function tilKelvin(v, type) {

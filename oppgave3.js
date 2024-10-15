@@ -1,7 +1,7 @@
 
 document.querySelector("form.frakmh").addEventListener("submit", e => {
   e.preventDefault();
-  const km = parseInt(e.target.km.value);
+  const km = Number(e.target.km.value);
 
   const mph = km / 1.609;
 
@@ -14,7 +14,7 @@ document.querySelector("form.frakmh").addEventListener("submit", e => {
 
 document.querySelector("form.framph").addEventListener("submit", e => {
   e.preventDefault();
-  const mph = parseInt(e.target.mph.value);
+  const mph = Number(e.target.mph.value);
 
   const km = mph * 1.609;
 
