@@ -4,3 +4,24 @@ nav>ul {
   list-style: none;
   gap: 1em;
 }
+
+h1,
+h2 {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skjult {
+  opacity: 0;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -25,11 +25,17 @@
 
   <main>
     <form>
-      <input type="text" name="fornavn">
-      <input type="text" name="mellomnavn">
+      <div>
+        <label for="fornavn">Fornavn</label>
+        <input type="text" name="fornavn" id="fornavn" placeholder="Fornavn">
+      </div>
+      <div>
+        <label for="mellomnavn">Mellomnavn</label>
+        <input type="text" name="mellomnavn" id="mellomnavn" placeholder="Mellomnavn">
+      </div>
       <input type="submit" value="Lag Epost!">
     </form>
-    <p>
+    <p class="skjult">
       Din epostadresse er: <span id="epost"></span>
     </p>
   </main>

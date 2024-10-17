@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 
+const skjult = document.querySelector(".skjult");
 const talletSpan = document.querySelector("#tallet");
 const halvpatenSpan = document.querySelector("#halvparten");
 const dobbeltSpan = document.querySelector("#dobbelt");
@@ -24,4 +25,6 @@ form.addEventListener("submit", e => {
 
   const kvadrat = tallet * tallet;
   kvadratSpan.textContent = kvadrat;
+
+  skjult.classList.remove("skjult");
 });

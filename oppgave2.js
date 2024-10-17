@@ -30,6 +30,7 @@ document.querySelector("form").addEventListener("submit", e => {
       fraKelvin(verdiKelvin, "f"), "Fahrenheit",
     )
   }
+  svar.classList.remove("skjult");
 });
 
 function tilKelvin(v, type) {

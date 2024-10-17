@@ -9,7 +9,11 @@ document.querySelector("form.frakmh").addEventListener("submit", e => {
   const mphSpan = document.querySelector("p.frakmh>#mph");
 
   kmSpan.textContent = km;
-  mphSpan.textContent = mph;
+  mphSpan.textContent = mph.toFixed(2)
+    ;
+
+  const p = document.querySelector("p.frakmh");
+  p.classList.remove("skjult");
 });
 
 document.querySelector("form.framph").addEventListener("submit", e => {
@@ -21,6 +25,8 @@ document.querySelector("form.framph").addEventListener("submit", e => {
   const kmSpan = document.querySelector("p.framph>#km");
   const mphSpan = document.querySelector("p.framph>#mph");
 
-  kmSpan.textContent = km;
+  kmSpan.textContent = km.toFixed(2);
   mphSpan.textContent = mph;
+  const p = document.querySelector("p.framph");
+  p.classList.remove("skjult");
 });

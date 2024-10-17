@@ -24,7 +24,7 @@
 
   <main>
     <form>
-      <input type="number" name="temperatur" placeholder="Temperatur i Fahrenheit">
+      <input type="number" name="temperatur" placeholder="Temperatur i Fahrenheit" step="any">
       <label for="fra">Fra målenehet</label>
       <select id="fra" name="fra">
         <option value="f">Fahrenheit</option>
@@ -34,7 +34,8 @@
 
       <input type="submit" value="Submit">
     </form>
-    <p id="svar"><span id="fahrenheit"></span> grader Fahrenheit tilsvarer <span id="celsius"></span> grader Celsius og
+    <p id="svar" class="skjult"><span id="fahrenheit"></span> grader Fahrenheit tilsvarer <span id="celsius"></span>
+      grader Celsius og
       <span id="kelvin"></span> grader Kelvin
     </p>
   </main>

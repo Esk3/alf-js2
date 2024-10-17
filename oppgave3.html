@@ -24,7 +24,7 @@
   <h2>km/h mph</h2>
 
   <main>
-    <section>
+    <section class="flex">
       <h3>Fra KM/H til MPH</h3>
       <form class="frakmh">
         <label for="kminput">KM/H:</label>
@@ -33,7 +33,7 @@
       </form>
 
 
-      <p class="frakmh">
+      <p class="frakmh skjult">
         <span id="km"></span>
         km/h tilsvarer
         <span id="mph"></span>
@@ -41,14 +41,14 @@
       </p>
     </section>
 
-    <section>
+    <section class="flex">
       <h3>Fra MPH til KM/H</h3>
       <form class="framph">
         <label for="mphinput">MPH: </label>
         <input type="text" name="mph" id="mphinput" placeholder="mph">
         <input type="submit" value="Submit">
       </form>
-      <p class="framph">
+      <p class="framph skjult">
         <span id="mph"></span>
         miles per hour tilsvarer
         <span id="km"></span>

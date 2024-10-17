@@ -1,4 +1,5 @@
 const epostSpan = document.querySelector("#epost");
+const skjult = document.querySelector(".skjult");
 
 document.querySelector("form").addEventListener("submit", e => {
   e.preventDefault();
@@ -10,4 +11,5 @@ document.querySelector("form").addEventListener("submit", e => {
   const epost = fornavn + "." + mellomnavn + "@" + domain;
 
   epostSpan.textContent = epost;
+  skjult.classList.remove("skjult");
 });

@@ -25,18 +25,18 @@
 
   <main>
     <form>
-      <label for="vekt">Vekt</label>
-      <input type="number" name="vekt" id="vekt" placeholder="vekt">
-      <label for="hoyde">Høyde</label>
-      <input type="number" name="hoyde" id="hoyde" placeholder="høyde">
+      <label for="vekt">Vekt: kg</label>
+      <input type="number" name="vekt" id="vekt" placeholder="vekt: kg" step="any">
+      <label for="hoyde">Høyde: m</label>
+      <input type="number" name="hoyde" id="hoyde" placeholder="høyd: m" step="any">
       <input type="submit" value="Submit">
     </form>
 
-    <p>
+    <p class="skjult">
       Basser på din høyde
-      <span id="hoyde"></span>
+      <span id="hoydeOutput"></span>
       m og din kroppsvekt
-      <span id="vekt"></span>
+      <span id="vektOutput"></span>
       kg er din bergenede BMI
       <span id="bmi"></span>
     </p>

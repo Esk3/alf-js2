@@ -7,6 +7,7 @@
   <title></title>
   <link href="/style.css" rel="stylesheet">
   <script src="oppgave1.js" type="module"> </script>
+  <script src="script.js" type="module"> </script>
 </head>
 
 <body>
@@ -24,10 +25,10 @@
 
   <main>
     <form>
-      <input type="number" name="tall">
+      <input type="number" name="tall" step="any" placeholder="Ditt tall">
       <input type="submit" value="Submit">
     </form>
-    <ul>
+    <ul class="skjult">
       <li>Tallet: <span id="tallet"></span></li>
       <li>Halvparten: <span id="halvparten"></span></li>
       <li>Dobbelt: <span id="dobbelt"></span></li>
